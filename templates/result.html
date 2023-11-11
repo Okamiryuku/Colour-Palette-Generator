@@ -45,16 +45,17 @@
     </div>
 </header>
 
-<!-- Upload Image-->
+<!-- Image Palette-->
 <div class="container mt-5">
-    <h1>Chose Your Image</h1>
-    <form method="post" enctype="multipart/form-data">
-        <div class="custom-file">
-            <label class="form-label" for="customFile">Default file input example</label>
-            <input type="file" class="form-control" id="customFile" name="file" accept=".jpg, .jpeg, .png"/>
+    <div class="row">
+        <!-- Colored Square Grid -->
+        {% for value, count in top_10_values %}
+        <div class="col-md-3 mb-3">
+            <div class="position-relative color-square" style="background-color: rgb{{ value }};">
+                <div class="center-text";">RGB {{ value|string }}</div>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Upload Image</button>
-    </form>
+    </div>
+    {% endfor %}
 </div>
 <br>
 <br>
