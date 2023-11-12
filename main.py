@@ -22,7 +22,9 @@ def image_colour(file_path):
                 # Update the count in the dictionary
                 pixel_counts[pixel_value] = pixel_counts.get(pixel_value, 0) + 1
 
-    top_10_values = sorted(pixel_counts.items(), key=lambda x: x[1], reverse=True)[:12]
+    sorted_values = sorted(pixel_counts.items(), key=lambda x: x[1], reverse=True)[:400]
+
+    top_10_values = list(sorted_values[::20])
 
     return top_10_values
 
